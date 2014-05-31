@@ -1,0 +1,54 @@
+<%= form_for @listing, :html => { :multipart => true } do |f| %>
+  <% if @listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+
+      <ul>
+      <% @listing.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group">
+    <%= f.label :job %>
+    <%= f.text_field :job, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :company_name %>
+    <%= f.text_field :company_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <p>update your company logo of you want</p>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :company_url %>
+    <%= f.text_field :company_url, class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :company_email %>
+    <%= f.text_field :company_email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
+

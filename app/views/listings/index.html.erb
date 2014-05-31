@@ -1,0 +1,43 @@
+<h1>Listing listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Job</th>
+      <th>Location</th>
+      <th>Description</th>
+      <th>Email</th>
+      <th>Company name</th>
+      <th>Company logo</th>
+      <th>Company url</th>
+      <th>String</th>
+      <th>Company email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= image_tag listing.image.url(:thumb) %></td>
+        <td><%= listing.job %></td>
+        <td><%= listing.location %></td>
+        <td><%= listing.description %></td>
+        <td><%= listing.email %></td>
+        <td><%= listing.company_name %></td>
+        <td><%= listing.company_url %></td>
+        <td><%= listing.string %></td>
+        <td><%= listing.company_email %></td>
+        <td><%= link_to 'Show', listing , class: "btn btn-link" %></td>
+        <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %></td>
+        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
