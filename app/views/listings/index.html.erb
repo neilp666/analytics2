@@ -1,43 +1,37 @@
-<h1>Listing listings</h1>
+<div class="page-header">
+  <ul class="nav nav-pills pull-right">
+    <li><%= link_to "About", "/about" %></li>
+  </ul>
 
-<table>
-  <thead>
-    <tr>
-      <th>Job</th>
-      <th>Location</th>
-      <th>Description</th>
-      <th>Email</th>
-      <th>Company name</th>
-      <th>Company logo</th>
-      <th>Company url</th>
-      <th>String</th>
-      <th>Company email</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<h2>Work In Analytics</h2>
 
-  <tbody>
+</div>
+
+<div class="row">
+    <div class="center">
+        <h1>Find a Great Job in the Web Analytics Industry</h1>
+          <h3>Don't search an endless list of websites with only a few
+          job postings.Our staff is dedicated to finding every open analytics job on the web</h3>
+          <br/>
+           <%= link_to "Post a job Today", new_listing_path , class: "btn btn-danger btn-lg" %>
+    </div>
+</div>
+
+
+
+    
+
+
     <% @listings.each do |listing| %>
       <tr>
-     
-        <td><%= listing.job %></td>
-        <td><%= listing.location %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.email %></td>
         <td><%= listing.company_name %></td>
-        <td><%= image_tag listing.image.url(:thumb) %></td>
-        <td><%= listing.company_url %></td>
-        <td><%= listing.company_email %></td>
+        <td><%= listing.job %></td>
+        <td><%= listing.created_at.strftime("%B %-d, %Y") %></td>
+   
         <td><%= link_to 'Show', listing , class: "btn btn-link" %></td>
         <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %></td>
         <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
