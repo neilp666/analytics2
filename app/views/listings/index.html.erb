@@ -11,15 +11,11 @@
     <div class="center">
         <h1>Find a Great Job in the Web Analytics Industry</h1>
           <h3>Don't search an endless list of websites with only a few
-          job postings.Our staff is dedicated to finding every open analytics job on the web</h3>
+          job postings. Our staff is dedicated to finding every open analytics job on the web</h3>
           <br/>
            <%= link_to "Post a job Today", new_listing_path , class: "btn btn-danger btn-lg" %>
     </div>
 </div>
-
-
-
-    
 
 
     <% @listings.each do |listing| %>
@@ -33,5 +29,6 @@
         <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
       </tr>
     <% end %>
+
 
 
