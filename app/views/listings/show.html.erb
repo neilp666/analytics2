@@ -1,44 +1,75 @@
-<%= image_tag @listing.image.url(:thumb) %>
 
-<p>
-  <strong>Job:</strong>
-  <%= @listing.job %>
-</p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @listing.location %>
-</p>
+      <div class="blog-header">
+        <h1 class="blog-title"><%= @listing.job %></h1>
+        <p class="lead blog-description"><%= @listing.company_name %>|| <%= @listing.location %> || <small>Date Posted: <%= @listing.created_at.strftime("%B %-d, %Y") %></small> </p>
+            <p class="blog-post-meta"><a><strong><%= @listing.company_url %></a></strong></p>
+      <hr>
+            
+      </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
+      <div class="row">
 
-<p>
-  <strong>Email:</strong>
-  <%= @listing.email %>
-</p>
+        <div class="col-sm-8 blog-main">
 
-<p>
-  <strong>Company name:</strong>
-  <%= @listing.company_name %>
-</p>
+          <div class="blog-post">
+  
 
-<p>
-  <strong>Company url:</strong>
-  <%= @listing.company_url %>
-</p>
+            <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
+            <hr>
+           
+            <p><code>How To Apply For This Postion</code></p>
+            <p>Please Send C.V to <%= @listing.company_email %></p>
 
-<p>
-  <strong>String:</strong>
-  <%= @listing.string %>
-</p>
 
-<p>
-  <strong>Company email:</strong>
-  <%= @listing.company_email %>
-</p>
 
-<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> |
-<%= link_to 'Back', listings_path, class: "btn btn-link" %>
+          </div><!-- /.blog-post -->
+<%= link_to 'Back to Jobs', listings_path, class: "btn btn-link" %></li>
+
+
+          
+
+</div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            <p><%= image_tag @listing.image.url(:thumb) %><p>
+            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>Tell a friend</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">January 2014</a></li>
+              <li><a href="#">December 2013</a></li>
+              <li><a href="#">November 2013</a></li>
+              <li><a href="#">October 2013</a></li>
+              <li><a href="#">September 2013</a></li>
+              <li><a href="#">August 2013</a></li>
+              <li><a href="#">July 2013</a></li>
+              <li><a href="#">June 2013</a></li>
+              <li><a href="#">May 2013</a></li>
+              <li><a href="#">April 2013</a></li>
+              <li><a href="#">March 2013</a></li>
+              <li><a href="#">February 2013</a></li>
+            </ol>
+          </div>
+          <div class="sidebar-module">
+            <h4>Tweet this job</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+
+
+
+
+
+
+
