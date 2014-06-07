@@ -11,6 +11,6 @@ class Listing < ActiveRecord::Base
    	    :path => ":style/id_:filename"
 	end
 		validates_attachment_content_type :image, :content_type => %w(image/jpeg image/jpg image/png) 
-		validates :job, :location, :description, :email, :company_name, :company_email, presence: true
+		validates :job, :location, :description, :email, :company_name, :company_email, :about, presence: true
      
 end

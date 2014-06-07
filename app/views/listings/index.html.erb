@@ -13,9 +13,9 @@
 <table class="table table-striped table-hover ">
    <% @listings.each do |listing| %>
     <tr class="active">
-      <h4><th class="center"><%= listing.company_name %></th></h4>
-      <h4><th class="center"><%= link_to listing.job, listing %></th></h4>
-      <h4><th class="center"><%= listing.created_at.strftime("%B %-d, %Y") %></th></h4>
+      <p><th class="center"><%= listing.company_name %></th></p>
+      <p><th class="center"><%= link_to listing.job, listing %></th></p>
+      <p><th class="center"><%= listing.created_at.strftime("%B %-d, %Y") %></th></p>
       <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %></td>
       <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
     </tr>
