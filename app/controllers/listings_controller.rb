@@ -26,9 +26,6 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
 
-    
-
-
     respond_to do |format|
       if @listing.save
         format.html { redirect_to root_url }
@@ -37,8 +34,8 @@ class ListingsController < ApplicationController
         format.html { render action: 'new' }
         format.json { render json: @listing.errors, status: :unprocessable_entity }
       end
-    end
   end
+end
 
   # PATCH/PUT /listings/1
   # PATCH/PUT /listings/1.json

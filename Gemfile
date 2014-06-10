@@ -13,7 +13,7 @@ gem 'bootstrap-sass'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "figaro"
-gem 'stripe'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'font-awesome-sass'
 
 group :production do
